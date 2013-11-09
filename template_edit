@@ -1,0 +1,18 @@
+#!/bin/bash
+
+TEMPLATES_DIR="$HOME/.templates"
+
+usage() {
+    echo "Usage: $0 filename [template_name]"
+    echo "Templates dir: $TEMPLATES_DIR"
+    exit 1
+}
+
+[[ $# < 1 || $# > 2 || $1 == '-h' || $1 == '--help' ]] && usage
+
+TARGET="$1"
+TEMPLATE_NAME=${2-default}
+EXT=${1#*.}
+
+cp "$TEMPLATES_DIR/$TEMPLATE_NAME.$EXT" "$TARGET"
+$EDITOR "$TARGET"
