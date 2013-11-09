@@ -1,0 +1,118 @@
+\documentclass[a4paper]{amsart}
+\usepackage{a4wide}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumerate}
+\usepackage[pdftex]{graphicx}
+\usepackage{slovak}
+\usepackage[utf8]{inputenc}
+\usepackage{color}
+\usepackage{helvet}
+%\usepackage{epic,eepic}
+\usepackage{cancel}
+\usepackage{mdframed}
+\usepackage[T1]{fontenc}
+\usepackage{titlesec}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage[all]{hypcap}
+
+\pagestyle{empty}
+\thispagestyle{empty}
+
+\lstset{
+language=C++,
+basicstyle=\scriptsize\ttfamily,
+numbers=left,
+numberstyle=\tiny\color{lightblue},
+stepnumber=1,
+numbersep=15pt,
+showspaces=false,
+showstringspaces=false,
+tabsize=4,
+breaklines=true,
+keywordstyle=\color{darkblue}\bfseries,
+ndkeywordstyle=\color{gray}\bfseries,
+commentstyle=\color{gray}\em,
+stringstyle=\color{red}
+}
+
+\hypersetup{
+colorlinks,
+citecolor=linkcolor,
+filecolor=linkcolor,
+linkcolor=linkcolor,
+urlcolor=linkcolor
+}
+
+\definecolor{linkcolor}{rgb}{0, 0.4, 0.7}
+\definecolor{blue}{rgb}{0,0.4,0.7}
+\definecolor{darkblue}{rgb}{0,0.3,0.6}
+\definecolor{gray}{rgb}{0.4,0.4,0.4}
+\definecolor{lightgray}{rgb}{0.7,0.7,0.7}
+\definecolor{red}{rgb}{1,0.05,0.05}
+\definecolor{darkred}{rgb}{0.8,0,0}
+\definecolor{lightblue}{rgb}{0.2,0.6,0.9}
+\definecolor{black}{rgb}{0,0,0}
+
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\theenumi.}
+
+\setcounter{tocdepth}{1}
+
+% ==============================================================
+
+\newcommand{\hl}[1]{\textcolor{blue}{#1}}
+\newcommand{\unit}[1]{\ensuremath \, \rm{#1}}
+
+\newcommand{\der}[0]{\ensuremath \, \mathrm{d}}
+
+\newcommand{\fig}[4]{
+\begin{figure}[h!]
+    \centering%
+    \includegraphics[width=#4\textwidth]{#1}
+    \caption{#2}
+    \label{fig:#3}
+\end{figure}
+}
+
+\renewcommand{\qed}{\hfill \mbox{\raggedright $\Box$}}
+
+\def\eps{\varepsilon}
+\def\N{\mathbb{N}}
+\def\R{\mathbb{R}}
+\def\Q{\mathbb{Q}}
+\def\Z{\mathbb{Z}}
+
+\newcommand{\TODO}{\textrm{\textbf{\color{red}{TODO}}}}
+
+\newcommand{\mytitle}[1]{
+    \begin{center}
+    \textbf{\textsc{#1}}\\
+    \textsc{Kamila Součková}
+    \end{center}
+    \vspace{6pt}
+    \noindent\hrule
+    \vspace{2\baselineskip}
+}
+
+\newcommand{\myhrule}[0]{
+    \vspace{0pt}{\color{lightgray}\hrulefill}\vspace{0pt}\\
+}
+
+\mdfdefinestyle{zadanie}{hidealllines=true,leftline=true,linewidth=.3em,linecolor=lightgray,skipbelow=12pt,}
+
+% \newenvironment{zadanie}
+%   {\begin{mdframed}[style=zadanie]}
+%   {\end{mdframed}\vspace{\baselineskip}}
+
+\newenvironment{zadanie}
+  {\sf\small}
+  {\normalfont\vspace{2em}}
+
+\newcommand{\zad}[1]{
+  \begin{zadanie}
+  #1
+  \end{zadanie}
+}
