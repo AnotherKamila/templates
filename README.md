@@ -19,10 +19,10 @@ Contains all the functions for working with the system. Source this file to have
 You should set your template directory as `TEMPLATE_DIR` here.
 
 ### `*.make`
-Makefiles describing how to compile stuff. If you call `template_make myfile.ext mytemplate`, `make myfile.ext` will be called with all Makefiles named `mytemplate.ext-*.make`.
+Makefiles describing how to compile stuff. ~~If you call `template_make myfile.ext mytemplate`, `make myfile.ext` will be called with all Makefiles named `mytemplate.ext-*.make`.~~ FIXME tomorrow :D (examples are correct)
 Examples:
-- compile your C++ homework: create `homework.cpp-bin.make`; calling `template_make file.cpp homework` will execute `make -f homework.cpp-bin.make file.cpp`
-- create both DVI and PDF from LaTeX: create `default.tex-dvi.make` and `default.tex-pdf.make`; calling `template_make file.tex` will execute `make -f default.tex-dvi.make file.tex ; make -f default.tex-pdf.make file.tex`
+- compile your C++ homework: create `homework.cpp-bin.make`; calling `template_make file.cpp homework` will execute `make -f homework.cpp-bin.make file.bin`
+- create both DVI and PDF from LaTeX: create `default.tex-dvi.make` and `default.tex-pdf.make`; calling `template_make file.tex` will execute `make -f default.tex-dvi.make file.dvi ; make -f default.tex-pdf.make file.pdf`
 
 See the `*.make` files in this repo for makefile examples.
 
