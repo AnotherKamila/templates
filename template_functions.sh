@@ -24,10 +24,20 @@ template_edit() {
     $EDITOR "$1"
 }
 
+template_make() {
+    # I deserve a slow and painful death for this, and I am rather content with it :D
+    MAKEFILES="`template_for "$1" "$2"`-*.make"
+    for f in $MAKEFILES; do
+        OUT_EXT="${f%.make}"; OUT_EXT="${OUT_EXT##*-}"
+        make -f "$f" "${1%.*}.$OUT_EXT"
+    done
+}
+
 # if this file was sourced with a non-empty first argument,
 # or the env var TEMPLATE_FUNCTIONS_ALIASES is set, these
 # aliases will be available
 if [[ -n $TEMPLATE_FUNCTIONS_ALIASES ]]; then
     alias tn=template_new
     alias te=template_edit
+    alias tm=template_make
 fi
