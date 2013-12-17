@@ -5,15 +5,19 @@
 #include <cstdio>
 #include <iostream>
 #include <map>
+#include <queue>
 #include <set>
 #include <string>
 #include <tuple>
 #include <vector>
+#ifdef EBUG
+#include "prettyprint_stl_containers.cpp"
+#endif
 using namespace std;
 
 #ifdef EBUG
 #define DEBUG(x) \
-    cerr << "DEBUG (F " << __FUNCTION__ << ", L" << __LINE__ << "): " << #x << ": " << x << endl
+    cerr << "DEBUG (F " << __FUNCTION__ << ", L" << __LINE__ << "): " << #x << ": " << (x) << endl
 #define DBG  if (1)
 #define DPRINTF(...)  fprintf(stderr, __VA_ARGS__)
 #define ASSERT(x) \
