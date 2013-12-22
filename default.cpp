@@ -3,6 +3,7 @@
 
 #include <algorithm>
 #include <cstdio>
+#include <functional>  // MUHAHAHAHAAA!
 #include <iostream>
 #include <map>
 #include <queue>
@@ -11,7 +12,7 @@
 #include <tuple>
 #include <vector>
 #ifdef EBUG
-#include "prettyprint_stl_containers.cpp"
+#include "prettyprint.hpp"  // http://louisdx.github.io/cxx-prettyprint/
 #endif
 using namespace std;
 
@@ -20,12 +21,14 @@ using namespace std;
     cerr << "DEBUG (F " << __FUNCTION__ << ", L" << __LINE__ << "): " << #x << ": " << (x) << endl
 #define DBG  if (1)
 #define DPRINTF(...)  fprintf(stderr, __VA_ARGS__)
+#define DDPRINT(fmt, ...)  fprintf(stderr, "DEBUG (F %s, L%d): " fmt "\n", __FUNCTION__, __LINE__, __VA_ARGS__)
 #define ASSERT(x) \
     if (!(x)) fprintf(stderr, "!!! L%d, F %s: Assertion `%s' failed!\n", __LINE__, __FUNCTION__, #x);
 #else
 #define DEBUG(x)
 #define DBG if (0)
 #define DPRINTF(...)
+#define DDPRINT(fmt, ...)
 // #define ASSERT(x)  if (!(x)) fork()
 #define ASSERT(x)  if (!(x)) while (1) cerr << "Ajeje";  // TLE (in case fork() doesn't cause security exception it's better than nothing)
 #endif
